@@ -139,7 +139,7 @@ new Qline(lineSetting)
 
 ---
 
-#### Supported Style
+#### Supported Animated Style
 + left
 + right
 + top
@@ -155,7 +155,11 @@ new Qline(lineSetting)
 + translateY
 + rotate
 + skew
-+ transformOrigin
++ transformOrigin<br>
+
+<br>
+
++ Other Attributes can also set by 'from'
 
 <br/>
 

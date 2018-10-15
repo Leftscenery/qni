@@ -73,6 +73,8 @@
     class Qttr {
         //After instance was created, the unit already polished
         constructor(opts = {}) {
+            let animatedAttr = ['left','right','top','bottom','opacity','color','backgroundColor','scale','scaleX','scaleY','translate','translateX','translateY','rotate','skew','ease'];
+
             //regular
             this.general = {
                 left: opts.left ? Qtool.checkValuePx(opts.left) : opts.left,
@@ -96,9 +98,12 @@
                 rotate: opts.rotate,
                 skew: opts.skew
             };
-            this.static = {
-                transformOrigin: opts.transformOrigin
-            };
+            //Add other attr to static group
+            for(let key in opts){
+                if(animatedAttr.includes(key)){
+                    this.static[key]=opts[key];
+                }
+            }
             this.ease = opts.ease || 0;
         }
 
