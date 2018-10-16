@@ -100,7 +100,7 @@
             };
             //Add other attr to static group
             for(let key in opts){
-                if(animatedAttr.includes(key)){
+                if(!animatedAttr.includes(key)){
                     this.static[key]=opts[key];
                 }
             }
