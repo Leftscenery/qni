@@ -15,6 +15,8 @@ Qni is a javascript quick animation plugin, support single animation and complex
 + Full animation control: start, pause, continue
 + Callback supported: oncomplete, onstart 
 + 11 * 3 ease modes
++ Nodejs supported (commonjs)
++ jQuery supported
 
 <br/>
 

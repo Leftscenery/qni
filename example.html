@@ -13,12 +13,12 @@
             position: absolute;
             background-color: red;
             transform-origin: center center;
-            top:300px;
         }
 
         #box1 {
             height: 100px;
             width: 100px;
+            top:150px;
             position: absolute;
             background-color: yellow;
         }
@@ -35,8 +35,7 @@
 
     new Qline()
         .add('#box',200,{top:50,ease:1})
-        .add('#box',500,{top:'20%',ease:1})
-        .add('#box',700,{left:'50%',ease:1})
+        .add('#box',500,{left:300,ease:1})
         .start()
 
 

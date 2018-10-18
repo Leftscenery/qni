@@ -5,7 +5,7 @@
  * @author: Jiawei Zhou, leftscenery@gmail.com
  */
 
-~function () {
+~function (window) {
     //new Qni('ele',200,{left:xxx,right:xxx,ease:'linear'},{onStart:fn,onComplete:fn,offset:50,delay:100})
     class Qni {
         constructor(ele, duration, animation = {}, opts = {}) {
@@ -296,7 +296,9 @@
         getEle(ele) {
             if (typeof ele == 'string') {
                 return window.document.querySelector(ele);
-            } else {
+            } else if(ele instanceof jQuery){
+                return ele[0]
+            }else {
                 return ele;
             }
         },
@@ -858,4 +860,4 @@
 
     window.Qline = Qline;
     window.Qni = Qni
-}();
+}((typeof(module) !== "undefined" && module.exports && typeof(global) !== "undefined") ? global : this || window);
