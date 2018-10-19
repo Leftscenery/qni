@@ -574,6 +574,7 @@
         getMatrixXY(ele) {
             //get current value
             let reg = /\((.+)\)/g;
+            if(getComputedStyle(ele)['transform']=='none') ele.style['transform']='translateX(0px)';
             reg = reg.exec(getComputedStyle(ele)['transform'])[1].split(', ');
             let valueX = reg[4];
             let valueY = reg[5];
