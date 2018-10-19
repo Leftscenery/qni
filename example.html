@@ -18,24 +18,24 @@
         #box1 {
             height: 100px;
             width: 100px;
-            top:150px;
+            top:200px;
             position: absolute;
             background-color: yellow;
         }
     </style>
 </head>
 <body>
-<div id="box">1</div>
-<div id="box1">2</div>
+<div id="box"></div>
+<div id="box1"></div>
 </body>
 </html>
 
 <script>
-    Qni.to('#box1',500,{left:300},{delay:300});
+    Qni.to('#box1',500,{left:300}, {delay:300});
 
     new Qline()
-        .add('#box',200,{top:50,ease:1})
-        .add('#box',500,{left:300,ease:1})
+        .add('#box',200,{opacity:0,top:100,ease:1},{onComplete:()=>{console.log('Qline One Complete!')}})
+        .add('#box',500,{opacity:1,left:500,ease:1})
         .start()
 
 

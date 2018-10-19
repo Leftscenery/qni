@@ -56,13 +56,13 @@
                         target.preState = endState;
                         opts.onComplete && opts.onComplete();
                     } else {
-                        count += 10;
+                        count += 5;
                         Qtool.css(target, Qtool.calculateNext(startState, endState, duration, count, endState.ease).toReal());
                     }
                 } else {
-                    count += 10;
+                    count += 5;
                 }
-            }, 10);
+            }, 5);
         }
     }
 
@@ -113,15 +113,15 @@
             let transform = '';
             //general group
             for (let key in this.general) {
-                if (this.general[key]) result[key] = this.general[key];
+                if (this.general[key]!==undefined) result[key] = this.general[key];
             }
             //Color group
             for (let key in this.color) {
-                if (this.color[key]) result[key] = this.color[key];
+                if (this.color[key]!==undefined) result[key] = this.color[key];
             }
             //Transform group
             for (let key in this.transform) {
-                if (this.transform[key]) {
+                if (this.transform[key]!==undefined) {
                     //Deal with translate
                     switch (key) {
                         case 'translate':
@@ -141,7 +141,7 @@
             }
             //Default group
             for (let key in this.static) {
-                if (this.static[key]) result[key] = this.static[key];
+                if (this.static[key]!==undefined) result[key] = this.static[key];
             }
             if (transform.trim().length > 0) {
                 result['transform'] = transform.trim();
@@ -497,7 +497,7 @@
             let initState = new Qttr({});
             if (reference.general) {
                 for (let key in reference.general) {
-                    if (reference.general[key]||reference.general[key]===0) {
+                    if (reference.general[key]!==undefined||reference.general[key]===0) {
                         if (preSet != {} && preSet.general && preSet.general[key] != undefined) {
                             //if preSet has value
                             initState.general[key] = Qtool.unitRoster(preSet.general[key], Qtool.getUnit(reference.general[key]), ele, key)
@@ -514,7 +514,7 @@
                 }
             }
             for (let key in reference.transform) {
-                if (reference.transform[key]||reference.transform[key]===0) {
+                if (reference.transform[key]!==undefined||reference.transform[key]===0) {
                     if (preSet != {} && preSet.transform && preSet.transform[key] != undefined) {
                         if (key == 'translateX' || key == 'translateY') {
                             initState.transform[key] = Qtool.unitRoster(preSet.transform[key], Qtool.getUnit(reference.transform[key]), ele, key)
@@ -553,7 +553,7 @@
             let str = '';
             let result = new Qttr({});
             for (let key in beginState.general) {
-                if (beginState.general[key]) {
+                if (beginState.general[key]!==undefined) {
                     result.general[key] = Qtool.easeValue(ease, count, Qtool.getValue(beginState.general[key]), Qtool.getValue(endState.general[key]) - Qtool.getValue(beginState.general[key]), total) + Qtool.getUnit(beginState.general[key]);
                 }
             }
@@ -563,7 +563,7 @@
                 }
             }
             for (let key in beginState.transform) {
-                if (beginState.transform[key]) {
+                if (beginState.transform[key]!==undefined) {
                     result.transform[key] = Qtool.easeValue(ease, count, Qtool.getValue(beginState.transform[key]), Qtool.getValue(endState.transform[key]) - Qtool.getValue(beginState.transform[key]), total) + Qtool.getUnit(beginState.transform[key]);
                 }
             }
