@@ -1,5 +1,5 @@
 /*
- * VERSION: 1.0.0
+ * VERSION: 1.0.4
  * RELEASE: 2018
  *
  * @author: Jiawei Zhou, leftscenery@gmail.com
