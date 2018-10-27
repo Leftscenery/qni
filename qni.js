@@ -260,6 +260,7 @@
                             this.event.onComplete && this.event.onComplete();
                         });
                         this.renderList=[];
+                        item.event.onComplete && item.event.onComplete();
                         this.event.onComplete && this.event.onComplete();
                     } else {
                         //prepare renderList
