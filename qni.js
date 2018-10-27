@@ -296,7 +296,7 @@
         getEle(ele) {
             if (typeof ele == 'string') {
                 return window.document.querySelector(ele);
-            } else if(ele instanceof jQuery){
+            } else if(window.hasOwnProperty('jQuery') && ele instanceof jQuery){
                 return ele[0]
             }else {
                 return ele;
