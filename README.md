@@ -44,12 +44,12 @@ new Qline({delay:100})
 #### Qni: Single Animation
 ```javascript
 Qni.from(ele,style)
-   .to(ele,duration,style[,options?]);
+   .to(ele,duration,style,options?);
 ```
 > + **from (ele,style)**
 >   + Set start state 
 > <br>
-> + **to (ele,duration,style[,options?])**
+> + **to (ele,duration,style ,options?)**
 >   + Set final state
 
 <br>
